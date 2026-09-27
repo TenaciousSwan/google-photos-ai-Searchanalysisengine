@@ -1,0 +1,134 @@
+[
+  {
+    "id": "play_store_001",
+    "source": "play_store",
+    "source_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=play_store_001",
+    "post_date": "2024-02-18T14:32:00Z",
+    "platform": "android",
+    "author": "Mark Jenkins",
+    "rating": 2,
+    "user_text": "I was looking for a picture of my doctor's prescription from last winter. I searched 'prescription' and 'medicine' but nothing showed up. I ended up scrolling through 4 months of photos manually before finding it.",
+    "engagement": 24
+  },
+  {
+    "id": "play_store_002",
+    "source": "play_store",
+    "source_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=play_store_002",
+    "post_date": "2024-03-02T19:11:00Z",
+    "platform": "android",
+    "author": "Elena Rostova",
+    "rating": 1,
+    "user_text": "Brilliant search! Found 5,000 random white cars from the internet and screenshots, but can't find the photo of my own car that I took a photo of in front of the yellow house last summer.",
+    "engagement": 58
+  },
+  {
+    "id": "app_store_101",
+    "source": "app_store",
+    "source_url": "https://apps.apple.com/app/google-photos/id962194608?review=app_store_101",
+    "post_date": "2024-01-29T10:04:00Z",
+    "platform": "ios",
+    "author": "Chloe_NYC",
+    "rating": 2,
+    "user_text": "I remember the café in Paris had exposed red brick and a blue neon sign, but I have no idea what it was called or what day of our trip we went. Searching 'cafe' shows 400 results and none of them are it.",
+    "engagement": 12
+  },
+  {
+    "id": "app_store_102",
+    "source": "app_store",
+    "source_url": "https://apps.apple.com/app/google-photos/id962194608?review=app_store_102",
+    "post_date": "2024-02-14T21:45:00Z",
+    "platform": "ios",
+    "author": "David M.",
+    "rating": 3,
+    "user_text": "Needed the photo of the Wi-Fi password sticker on the back of my router that I took 6 months ago. Tried searching 'wifi' 'password' 'modem' 'router' and got zero results. Had to swipe back page by page.",
+    "engagement": 9
+  },
+  {
+    "id": "reddit_201",
+    "source": "reddit",
+    "source_url": "https://reddit.com/r/googlephotos/comments/1ak3m9q/cannot_find_photos_from_whatsapp/",
+    "post_date": "2024-02-06T17:22:00Z",
+    "platform": "android",
+    "author": "u/PixelPhotog99",
+    "rating": null,
+    "user_text": "All the family photos my sister sent on WhatsApp have their EXIF dates stripped. When I search 'sister wedding' or look in 2021, they aren't there because Photos thinks they were created last week when I downloaded them!",
+    "engagement": 84
+  },
+  {
+    "id": "reddit_202",
+    "source": "reddit",
+    "source_url": "https://reddit.com/r/googlephotos/comments/1b2x7yt/search_by_event_name_not_working/",
+    "post_date": "2024-03-01T08:15:00Z",
+    "platform": "web",
+    "author": "u/DataHoarderDan",
+    "rating": null,
+    "user_text": "I attended Sarah's farewell dinner sometime in late 2022. I know exactly who was there, but Photos doesn't understand multi-person queries like 'Sarah and Kevin having dinner'. It just shows either Sarah or Kevin separately.",
+    "engagement": 41
+  },
+  {
+    "id": "help_forum_301",
+    "source": "help_forum",
+    "source_url": "https://support.google.com/photos/thread/24981023",
+    "post_date": "2024-01-15T11:30:00Z",
+    "platform": "web",
+    "author": "CommunityMember_881",
+    "rating": null,
+    "user_text": "How do I search for a screenshot when I don't remember the app? I took a screenshot of a flight confirmation code about 8 months ago. Searching 'flight' or 'airline' brings up travel photos, not the screenshot.",
+    "engagement": 19
+  },
+  {
+    "id": "help_forum_302",
+    "source": "help_forum",
+    "source_url": "https://support.google.com/photos/thread/25109312",
+    "post_date": "2024-02-20T16:05:00Z",
+    "platform": "android",
+    "author": "Anand R.",
+    "rating": null,
+    "user_text": "Bhai photo search bilkul kaam nahi kar raha. Last year Goa beach trip par humne cliffside lookout dekha tha. Place name yaad nahi hai, aur date bhi bhool gaya. Searching 'beach sunset' shows 2000 pictures from 5 years.",
+    "engagement": 15
+  },
+  {
+    "id": "play_store_003",
+    "source": "play_store",
+    "source_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=play_store_003",
+    "post_date": "2024-03-10T12:00:00Z",
+    "platform": "android",
+    "author": "Sarah Connor",
+    "rating": 1,
+    "user_text": "I had to search Google for 2 hours to find customer service because my Google One subscription charged my credit card twice. Horrible app pricing!",
+    "engagement": 3
+  },
+  {
+    "id": "play_store_004",
+    "source": "play_store",
+    "source_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.photos&reviewId=play_store_004",
+    "post_date": "2024-03-12T09:25:00Z",
+    "platform": "android",
+    "author": "Tom Hardy",
+    "rating": 2,
+    "user_text": "Looking for the receipt for my laptop purchase for tax return. I remember buying it around Black Friday 2023, but don't know the exact store. Searching 'Best Buy' or 'electronics receipt' showed nothing. Spent 3 hours scrolling.",
+    "engagement": 31
+  },
+  {
+    "id": "reddit_203",
+    "source": "reddit",
+    "source_url": "https://reddit.com/r/googlephotos/comments/1bw88q9/searching_for_dog_shows_thousands/",
+    "post_date": "2024-03-16T15:40:00Z",
+    "platform": "ios",
+    "author": "u/GoldenRetrieverFan",
+    "rating": null,
+    "user_text": "I searched 'dog' and got 4,200 photos across 7 years of my golden retriever. There's no way to filter down to 'dog wearing red birthday hat' or 'dog playing in snow in Montana'. The search is too broad to be useful.",
+    "engagement": 67
+  },
+  {
+    "id": "app_store_103",
+    "source": "app_store",
+    "source_url": "https://apps.apple.com/app/google-photos/id962194608?review=app_store_103",
+    "post_date": "2024-03-18T18:30:00Z",
+    "platform": "ios",
+    "author": "Jessica B.",
+    "rating": 1,
+    "user_text": "This app drains my iPhone battery in 2 hours during backup. Total garbage battery management.",
+    "engagement": 14
+  }
+]
