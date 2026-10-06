@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Photos AI Discovery Engine — Cognitive Retrieval Intelligence</title>
-  <meta name="description" content="User research insights on photo search friction across Android, iOS, and Web — sourced from real scraped public reviews.">
+  <meta name="description"
+    content="User research insights on photo search friction across Android, iOS, and Web — sourced from real scraped public reviews.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2.2">
 </head>
+
 <body>
   <div class="app-container">
 
@@ -43,7 +48,9 @@
 
         <!-- Refresh data -->
         <button class="btn-primary" id="btn-refresh">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
           Update Review Data
         </button>
       </div>
@@ -55,9 +62,12 @@
       <!-- Section: Overview -->
       <section class="hero-banner" id="hero-banner">
         <div class="hero-left">
-          <h2 class="hero-title">Why Searching for Photos Fails — Real User Insights</h2>
+          <h2 class="hero-title">How Peope Use Search to Retrieve Their Photos and Videos — Real User Insights</h2>
           <p class="hero-subtitle">
-            We analyzed <strong id="val-total-conversations">2,005</strong> authentic user reviews from Google Play, Apple App Store, and Reddit. Real people search using natural memories—like faces, locations, written notes, or rough timeframes (<em>"prescription from last winter"</em>, <em>"dinner with Sarah"</em>)—but current search often leaves them empty-handed. Here is what breaks down and how to fix it.
+            We analyzed <strong id="val-total-conversations">2,005</strong> authentic user reviews from Google Play,
+            Apple App Store, and Reddit. Real people search using natural memories—like faces, locations, written notes,
+            or rough timeframes (<em>"prescription from last winter"</em>, <em>"dinner with Sarah"</em>)—but current
+            search often leaves them empty-handed. Here is what breaks down and how to fix it.
           </p>
         </div>
         <div class="hero-stats">
@@ -74,7 +84,8 @@
             <span class="stat-label">Gave Up Searching</span>
           </div>
           <div class="stat-chip">
-            <span class="stat-value" id="val-top-opportunity" style="font-size:0.95rem; line-height:1.2; padding-top:0.2rem;">Fuzzy Memories</span>
+            <span class="stat-value" id="val-top-opportunity"
+              style="font-size:0.95rem; line-height:1.2; padding-top:0.2rem;">Fuzzy Memories</span>
             <span class="stat-label">Top Struggle</span>
           </div>
         </div>
@@ -87,31 +98,47 @@
             <span style="font-size:1.3rem;">💬</span>
             <div>
               <h2 class="section-title">Ask a Question About User Struggles</h2>
-              <p class="section-subtitle">Ask anything about photo search issues. Answers are grounded strictly in real user reviews with cited quotes.</p>
+              <p class="section-subtitle">Ask anything about photo search issues. Answers are grounded strictly in real
+                user reviews with cited quotes.</p>
             </div>
           </div>
         </div>
 
         <div class="qa-input-wrapper">
-          <div class="qa-input-bar">
-            <svg class="qa-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          <form id="qa-form" class="qa-input-bar"
+            onsubmit="event.preventDefault(); window.handleAskQuestion && window.handleAskQuestion();">
+            <svg class="qa-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="qa-input" class="qa-input-field" placeholder="Ask a question (e.g. Why can't people find prescriptions or Wi-Fi passwords?)..." aria-label="Ask a question about photo search struggles">
-            <button class="btn-primary" id="btn-ask-question">
+            <input type="text" id="qa-input" class="qa-input-field"
+              placeholder="Ask a question (e.g. Why can't people find prescriptions or Wi-Fi passwords?)..."
+              aria-label="Ask a question about photo search struggles">
+            <button type="submit" class="btn-primary" id="btn-ask-question">
               <span>Ask AI</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
             </button>
-          </div>
+          </form>
 
           <div class="qa-quick-chips" id="qa-quick-chips">
             <span class="qa-quick-label">Try asking:</span>
-            <button class="qa-chip" data-q="Why can't people find prescriptions or Wi-Fi passwords?">Prescriptions &amp; Wi-Fi</button>
-            <button class="qa-chip" data-q="Why can't users search for two people together in the same photo?">Two people together</button>
-            <button class="qa-chip" data-q="Why are dates on WhatsApp and downloaded photos wrong?">Wrong photo dates</button>
-            <button class="qa-chip" data-q="Why does searching for my car flood me with thousands of dog photos?">Flooded with wrong photos</button>
+            <button type="button" class="qa-chip" data-q="Why can't people find prescriptions or Wi-Fi passwords?"
+              onclick="window.handleAskQuestion && window.handleAskQuestion(this.dataset.q)">Prescriptions &amp;
+              Wi-Fi</button>
+            <button type="button" class="qa-chip"
+              data-q="Why can't users search for two people together in the same photo?"
+              onclick="window.handleAskQuestion && window.handleAskQuestion(this.dataset.q)">Two people
+              together</button>
+            <button type="button" class="qa-chip" data-q="Why are dates on WhatsApp and downloaded photos wrong?"
+              onclick="window.handleAskQuestion && window.handleAskQuestion(this.dataset.q)">Wrong photo dates</button>
+            <button type="button" class="qa-chip"
+              data-q="Why does searching for my car flood me with thousands of dog photos?"
+              onclick="window.handleAskQuestion && window.handleAskQuestion(this.dataset.q)">Flooded with wrong
+              photos</button>
           </div>
         </div>
 
@@ -137,7 +164,8 @@
       <section class="section-card" id="journey-flow-container">
         <div class="section-header">
           <h2 class="section-title">What Happens When Someone Looks for a Photo</h2>
-          <p class="section-subtitle">The user's path: What they remember &rarr; What they typed &rarr; Where search broke down &rarr; The fix.</p>
+          <p class="section-subtitle">The user's path: What they remember &rarr; What they typed &rarr; Where search
+            broke down &rarr; The fix.</p>
         </div>
         <div class="journey-flow" id="journey-flow">
           <!-- Filled dynamically by app.js -->
@@ -182,12 +210,14 @@
         <div class="tab-content" id="tab-evidence" role="tabpanel" style="display:none;">
           <div class="explorer-controls">
             <div class="explorer-filters">
-              <label for="evidence-theme-filter" style="font-size:0.75rem; color:var(--text-secondary);">Problem Area:</label>
+              <label for="evidence-theme-filter" style="font-size:0.75rem; color:var(--text-secondary);">Problem
+                Area:</label>
               <select id="evidence-theme-filter" class="explorer-select">
                 <option value="all">All Problem Areas</option>
               </select>
 
-              <label for="evidence-outcome-filter" style="font-size:0.75rem; color:var(--text-secondary); margin-left:0.5rem;">What Happened:</label>
+              <label for="evidence-outcome-filter"
+                style="font-size:0.75rem; color:var(--text-secondary); margin-left:0.5rem;">What Happened:</label>
               <select id="evidence-outcome-filter" class="explorer-select">
                 <option value="all">All Outcomes</option>
                 <option value="FAILED_ZERO_RESULTS">Found Nothing (0 Results)</option>
@@ -196,7 +226,8 @@
                 <option value="SUCCESS_EVENTUAL">Found After Long Search</option>
               </select>
             </div>
-            <span id="evidence-filter-count" style="font-size:0.75rem; color:var(--text-muted);">Showing 66 real reviews</span>
+            <span id="evidence-filter-count" style="font-size:0.75rem; color:var(--text-muted);">Showing 66 real
+              reviews</span>
           </div>
 
           <div class="evidence-grid" id="evidence-grid">
@@ -217,7 +248,8 @@
         <div class="tab-content" id="tab-report" role="tabpanel" style="display:none;">
           <div class="report-container">
             <div class="report-top-bar">
-              <span id="report-meta" class="report-meta">Based on authentic reviews from Android, iPhone, and Reddit users.</span>
+              <span id="report-meta" class="report-meta">Based on authentic reviews from Android, iPhone, and Reddit
+                users.</span>
               <div class="report-export-btns">
                 <button class="btn-outline" id="btn-export-md">Save as Document</button>
                 <button class="btn-outline" id="btn-export-json">Save as Data</button>
@@ -269,7 +301,8 @@
           </button>
           <button class="step-btn" data-action="extract">
             <span class="step-num">3</span>
-            <div><strong>Find Search Struggles</strong><span>Identify what the user was looking for and what failed</span></div>
+            <div><strong>Find Search Struggles</strong><span>Identify what the user was looking for and what
+                failed</span></div>
           </button>
           <button class="step-btn" data-action="cluster">
             <span class="step-num">4</span>
@@ -294,6 +327,7 @@
 
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2.2"></script>
 </body>
+
 </html>

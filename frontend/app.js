@@ -146,9 +146,14 @@ function bindEvents() {
   });
 
   // Ask a Question interactive handlers
-  dom.btnAskQuestion?.addEventListener('click', () => handleAskQuestion());
+  dom.btnAskQuestion?.addEventListener('click', (e) => {
+    // Rely on form submit event to handle this to avoid double-firing
+  });
   dom.qaInput?.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') handleAskQuestion();
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleAskQuestion();
+    }
   });
   dom.qaQuickChips?.querySelectorAll('.qa-chip').forEach(chip => {
     chip.addEventListener('click', () => {
@@ -297,9 +302,9 @@ function priorityBadge(tier) {
   const t = (tier || 'medium').toLowerCase();
   const map = {
     critical: { cls: 'priority-urgent', shape: '▲', label: 'Urgent' },
-    high:     { cls: 'priority-high',   shape: '◆', label: 'High' },
-    medium:   { cls: 'priority-medium', shape: '●', label: 'Medium' },
-    low:      { cls: 'priority-low',    shape: '■', label: 'Low' }
+    high: { cls: 'priority-high', shape: '◆', label: 'High' },
+    medium: { cls: 'priority-medium', shape: '●', label: 'Medium' },
+    low: { cls: 'priority-low', shape: '■', label: 'Low' }
   };
   const m = map[t] || map.medium;
   return `<span class="priority-badge ${m.cls}"><span aria-hidden="true">${m.shape}</span> ${m.label}</span>`;
@@ -473,15 +478,15 @@ function renderComparison() {
         </thead>
         <tbody>
           ${list.map(c => {
-            const cat = friendly(c.archetype, LABELS.categories);
-            const color = LABELS.colors[c.archetype] || 'var(--blue)';
-            const volPct = Math.round((c.evidence_count / maxVol) * 100);
-            const failPct = Math.round((c.failure_rate || 0) * 100);
-            const cues = Object.entries(c.cue_types || {}).map(([k, v]) => `<span class="cue-tag">${k} (${v})</span>`).join('') || '<span class="platform-pill">None</span>';
-            const strats = Object.entries(c.query_strategies || {}).map(([k, v]) => `<span class="strategy-tag">${k.replace('_', ' ')} (${v})</span>`).join('') || '<span class="platform-pill">None</span>';
-            const plats = Object.entries(c.platforms || {}).map(([k, v]) => `<span class="platform-pill">${k} (${v})</span>`).join('');
+    const cat = friendly(c.archetype, LABELS.categories);
+    const color = LABELS.colors[c.archetype] || 'var(--blue)';
+    const volPct = Math.round((c.evidence_count / maxVol) * 100);
+    const failPct = Math.round((c.failure_rate || 0) * 100);
+    const cues = Object.entries(c.cue_types || {}).map(([k, v]) => `<span class="cue-tag">${k} (${v})</span>`).join('') || '<span class="platform-pill">None</span>';
+    const strats = Object.entries(c.query_strategies || {}).map(([k, v]) => `<span class="strategy-tag">${k.replace('_', ' ')} (${v})</span>`).join('') || '<span class="platform-pill">None</span>';
+    const plats = Object.entries(c.platforms || {}).map(([k, v]) => `<span class="platform-pill">${k} (${v})</span>`).join('');
 
-            return `
+    return `
               <tr>
                 <td>
                   <div class="theme-cell">
@@ -517,7 +522,7 @@ function renderComparison() {
                 </td>
               </tr>
             `;
-          }).join('')}
+  }).join('')}
         </tbody>
       </table>
     </div>
@@ -842,7 +847,7 @@ async function handleAskQuestion(customQuestion) {
 function openReviewInDrawer(reviewId) {
   dom.drawerOverlay?.classList.add('open');
   const sourceItem = (state.currentQASources || []).find(s => s.id === reviewId) ||
-                     (state.evidenceList || []).find(e => e.id === reviewId);
+    (state.evidenceList || []).find(e => e.id === reviewId);
 
   if (dom.drawerTitle) dom.drawerTitle.textContent = `Review Evidence [${reviewId}]`;
   if (dom.drawerSubtitle) {
@@ -938,3 +943,7 @@ function toast(msg, isErr = false) {
   dom.toast.classList.add('show');
   setTimeout(() => dom.toast?.classList.remove('show'), 3000);
 }
+
+// Attach to window so HTML inline handlers can reach it
+window.handleAskQuestion = handleAskQuestion;
+

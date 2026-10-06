@@ -4,6 +4,9 @@ from pydantic import BaseModel
 from backend.app.services.orchestrator import orchestrator
 from backend.app.core.database import db_manager
 from backend.app.models.schemas import OverviewMetrics, RelevanceGateOutput, CognitiveExtractionPayload
+from backend.app.pipeline.scoring import scoring_manager
+from backend.app.pipeline.insights import insight_manager
+from backend.app.services.qa_engine import qa_engine
 
 router = APIRouter()
 
